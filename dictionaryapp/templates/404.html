@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1752YPLP7H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-1752YPLP7H");
+    </script>
+
+    <title>404 NOT FOUND</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/errors.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  </head>
+
+  <body>
+    <div class="error-page">
+      <div>
+        <h1 data-h1="404">404</h1>
+        <p data-p="NOT FOUND">NOT FOUND</p>
+      </div>
+    </div>
+
+    <a href="http://127.0.0.1:8000/" class="back">GO BACK</a>
+  </body>
+</html>

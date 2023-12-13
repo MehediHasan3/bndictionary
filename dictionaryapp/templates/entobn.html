@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+ <!--<link rel="styelsheet" href="../static/styles.css">--> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-..."
+  crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'english.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100;200;300;400;500;600;700;800;900&family=Tiro+Bangla&display=swap" rel="stylesheet">
+  <title> Personal Dictionary </title>
+</head>
+<body>
+  <div class="box">
+    <h1 id="header">Engish Dictionary</h1>
+    <script src="../static/popup.js"></script>
+    <form id="searchForm" action="" method="get">
+      <input type="text" name="query" placeholder="Type Word">
+      <input type="submit" value="Search" onclick="showPopup()">
+    </form>
+    <div id="searchResultsContainer">
+      <div id="searchResults">
+        {% if query %}
+            <div id="popup"></div>
+            {% if result %}
+              <div class="main">
+                <p class="sign">
+                  <span class="word-info">
+                    <span class="bold">Word: {{ result.word }} </span>
+                    <button class="pronounce-button" onclick="pronounce('{{ result.word }}')">
+                      <i class="fas fa-volume-up"></i> <!-- Font Awesome speaker icon -->
+                    </button>
+                  </span>
+                  <span class="regular">Meaning: {{ result.meaning }}</span>
+                </p>
+              </div>
+            {% else %}
+                <script>
+                    // Show the "No result found" message in the popup div
+                    document.getElementById('popup').innerHTML = '<div class="main"><p class="sign" text-align="center"> <span class="regular"> Unfortunately, the word meaning</span> <span class="bold">"{{ query }}"</span> is not listed in my database.</p></div>';
+                    document.getElementById('popup').style.display = 'block';
+                </script>
+            {% endif %}
+        {% endif %}
+      </div>
+      </div>
+      <div>
+        <ul>
+          <li><a href="http://127.0.0.1:8000/">Bangla To Bangla</a></li>
+          <li><a href="http://127.0.0.1:8000/bntoen">Bangla To English</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+  <footer>
+    <p class="footer-text">All rights reserved Mehedi Hasan</p>
+  </footer>
+  <script>
+    function pronounce(word) {
+      console.log('Pronouncing:', word);
+      var utterance = new SpeechSynthesisUtterance(word);
+      var voices = window.speechSynthesis.getVoices();
+      utterance.voice = voices[0];
+      window.speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

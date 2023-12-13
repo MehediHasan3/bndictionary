@@ -1,0 +1,78 @@
+body {
+    margin: 10px;
+    background-color: rgb(0, 0, 0);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+}
+.eng-list {
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.eng-text {
+    width: 80%;
+    height: 50px;
+    max-width: 300px;
+    text-align: center;
+    background-color: #009604; /* Yellow */
+    color: #ffffff;
+    font-size: 1.5em;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.eng-text2 {
+    width: 100%;
+    height: 50px;
+    max-width: 160px;
+    text-align: center;
+    background-color: #009604; /* Yellow */
+    color: #ffffff;
+    font-size: 1.5em;
+    border-radius: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+li {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px; /* Adjust the height as needed */
+    margin: 20px;
+    text-align: center;
+    background-color: #009604; /* Yellow */
+    color: #ffffff;
+    transition: background-color 0.5s;
+    border-radius: 0.4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+li:not(.exclude-me) {
+    margin: 0; /* Resetting the margin for this specific li */
+}
+
+li:hover {
+    background-color: #00c507;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px #292929;
+    box-shadow: 0 0 45px rgb(29, 251, 0) !important;
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+    ul {
+        max-width: none; /* Remove max-width on smaller displays */
+    }
+
+    li {
+        padding: 1em;
+        font-size: 0.8em;
+        margin-bottom: 8px; /* Adjust the margin for spacing between list items in mobile view */
+    }
+}

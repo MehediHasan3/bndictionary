@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+ <!--<link rel="styelsheet" href="../static/styles.css">-->
+  <link rel="stylesheet" type="text/css" href="{% static 'bntobn.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@300;400;800&display=swap" rel="stylesheet">
+  <title> বাংলা ডিকশনারি </title>
+</head>
+<body>
+  <div class="box">
+    <h1 id="header">বাংলা ডিকশনারি</h1>
+    <script src="../static/popup.js"></script>
+    <form id="searchForm" action="" method="get">
+      <input type="text" name="query" placeholder="শব্দ লিখুন">
+      <input type="submit" value="Search" onclick="showPopup()">
+    </form>
+    <div id="searchResultsContainer">
+      <div id="searchResults">
+        {% if query %}
+            <div id="popup"></div>
+            {% if result %}
+            <div class="main">
+              <p class="sign">
+                <span class="word-info">
+                  <span class="bold">শব্দ: {{ result.word }} </span>
+                </span>
+                <span class="regular">অর্থ: {{ result.meaning }}</span>
+              </p>
+            </div>
+            {% else %}
+                <script>
+                    // Show the "No result found" message in the popup div
+                    document.getElementById('popup').innerHTML = '<div class="main"><p class="sign" text-align="center"> <span class="regular"> দুঃখিত, আমার ডাটাবেজে </span> <span class="bold">"{{ query }}"</span>শব্দের অর্থ নেই।</p></div>';
+                    document.getElementById('popup').style.display = 'block';
+                </script>
+            {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/entobn">English To Bangla</a></li>
+        <li><a href="http://127.0.0.1:8000/">Bangla To Bangla</a></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <p class="footer-text">All rights reserved Mehedi Hasan</p>
+  </footer>
+</body>
+</html>

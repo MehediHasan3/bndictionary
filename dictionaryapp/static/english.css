@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+}
+
+h1 {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-family: 'Noto Serif Bengali', serif;
+  font-weight: 800;
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  max-height: 125px;
+  overflow-y: auto;
+}
+
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  max-width: 625px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box h1 {
+  user-select: none;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  font-size: 19px;
+  box-sizing: border-box;
+  transition: .5s;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  background: #fff;
+  width: 100%;
+  height: 62.5px;
+  border: none;
+  outline: none;
+  padding: 0 25px;
+  border-radius: 32px;
+  font-family: 'Noto Serif Bengali', serif;
+  font-weight: 300;
+}
+
+input[type="submit"] {
+  border-radius: 32px; /* Adjusted border-radius */
+  width: 100%;
+  height: 62.5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #ffc107;
+  color: #fff;
+  font-family: 'Noto Serif Bengali', serif;
+}
+
+input[type="submit"]:hover {
+  background: #f34b21;
+}
+
+#searchResults {
+  color: #fff;
+}
+#searchResultsContainer {
+  margin-top: 10px;
+  margin-bottom: 30px; /* Adjusted margin at the bottom of the search results container */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 625px;
+  height: 80%;
+  margin: 1em auto;
+  border-radius: 1em;
+  box-shadow: 5px 5px 240px 1px #ffffff80;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.sign {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 15px;
+  padding-bottom:15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #000000;
+  font-family: 'Noto Serif Bengali', serif;
+  font-weight: 300;
+  font-size: 19px;
+  text-align: center;
+}
+
+.sign .bold {
+  font-weight: 800;
+}
+
+.sign .regular {
+  font-weight: 400;
+}
+
+.sign .thin {
+  font-weight: 300;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffc107;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+li {
+  flex: 1;
+  list-style: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 12.5px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-family: 'Noto Serif Bengali', serif;
+}
+
+li:hover {
+  background-color: #ff8800;
+}
+
+
+li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: unset;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #10100e75;
+  padding: 0;
+  margin-top: 40px; /* Adjusted margin at the top of the footer */
+}
+
+
+.footer-text {
+  color: #ffffff;
+  font-family: 'Noto Serif Bengali', serif;
+  font-weight: 300;
+  font-size: 10px;
+}
+.pronounce-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em; /* Adjust the size as needed */
+  color: #333; /* Adjust the color as needed */
+}

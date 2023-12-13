@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1752YPLP7H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-1752YPLP7H");
+    </script>
+
+    <title>500 SERVER ERROR</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/errors.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+  </head>
+
+  <body>
+    <div class="error-page">
+      <div>
+        <h1 data-h1="500">500</h1>
+        <p data-p="SERVER ERROR">SERVER ERROR</p>
+      </div>
+    </div>
+    <a href="http://127.0.0.1:8000/" class="back">GO BACK</a>
+  </body>
+</html>
